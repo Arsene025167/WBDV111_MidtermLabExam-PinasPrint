@@ -1,0 +1,241 @@
+:root {
+  --bg: #ebebeb;
+  --text: #1f1f1f;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 18px 45px rgba(0, 0, 0, 0.18);
+  --blue: rgb(76, 120, 190);
+  --pink: rgb(226, 137, 137);
+  --yellow: #ffd86b;
+  --radius-md: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: -0.03em;
+}
+
+.section-note {
+  margin: 0 auto;
+  max-width: 720px;
+  line-height: 1.7;
+  color: #555;
+  font-size: 1rem;
+}
+
+.gallery-hero {
+  position: relative;
+  min-height: 48vh;
+  display: grid;
+  place-items: center;
+  padding: 80px 20px 50px;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(10, 12, 18, 0.62), rgba(10, 12, 18, 0.62)),
+    url("Images/ManyLanyards2.jpg") center/cover no-repeat;
+}
+
+.gallery-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.gallery-hero h1 {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  letter-spacing: -0.05em;
+}
+
+.gallery-hero p {
+  margin: 12px auto 22px;
+  max-width: 60ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-kicker {
+  margin: 0 0 10px;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.gallery-btn {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: white;
+  color: #111;
+  font-weight: 800;
+  font-family: "Poppins", Arial, sans-serif;
+  box-shadow: var(--shadow);
+}
+
+.gallery-section {
+  padding: 60px 20px 90px;
+}
+
+.cards-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.he-card {
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.he-card-tag {
+  margin: 18px 20px 0;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(50deg, var(--blue) 0%, var(--pink) 70%);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.he-card-image {
+  width: calc(100% - 56px);
+  margin: 22px 28px 0;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+.he-card-contents {
+  padding: 24px 28px 0;
+  text-align: center;
+}
+
+.he-card-title {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.he-card-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 28px 28px 0;
+}
+
+.he-card-order {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111;
+  background: #c6d2e9;
+}
+
+.he-card-addon-title {
+  padding: 16px 20px 0;
+  text-align: center;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #333;
+}
+
+.he-card-content:last-of-type {
+  padding-bottom: 20px;
+}
+
+.he-card-contents-description {
+  padding: 30px 28px 45px;
+}
+
+.he-card-contents-description p {
+  margin: 0 0 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.he-card-price {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #1f3b82;
+}
+
+@media (max-width: 700px) {
+  .gallery-hero {
+    min-height: 40vh;
+    padding: 62px 16px 34px;
+  }
+
+  .gallery-section {
+    padding: 28px 16px 60px;
+  }
+
+  .he-card-image {
+    width: calc(100% - 32px);
+    margin: 16px 16px 0;
+  }
+
+  .he-card-tag {
+    margin: 16px 16px 0;
+  }
+}
