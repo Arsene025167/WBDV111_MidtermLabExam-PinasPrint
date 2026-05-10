@@ -1,5 +1,5 @@
 :root {
-  --bg: #ebebeb;
+  --bg: white;
   --text: #1f1f1f;
   --white: #ffffff;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -90,7 +90,7 @@ h2 {
 }
 
 .navbar:hover {
-  background: linear-gradient(to right, rgba(76, 120, 190, 0.8), rgba(226, 137, 137, 0.8));
+  background: linear-gradient(to right, rgba(32, 110, 236, 0.8) 0%, rgba(209, 209, 209, 0.726) 30%, rgba(255, 255, 255, 0.788) 70%,rgba(221, 76, 76, 0.8) 100%);
 }
 
 .logo {
@@ -155,12 +155,13 @@ h2 {
   font-weight: 600; /* Softened from 700 */
   padding: 10px 16px;
   border-radius: 999px;
-  transition: background 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
 
 .navbar a:hover {
   background: rgba(255, 255, 255, 0.16);
   transform: translateY(-1px);
+  color: var(--yellow);
 }
 
 .hero {
@@ -174,7 +175,7 @@ h2 {
   color: white;
   background:
     linear-gradient(rgba(10, 12, 18, 0.58), rgba(10, 12, 18, 0.58)),
-    url("Images/StockHero.jpg") center/cover no-repeat;
+    url("D:/WEBDEV/updated webdev/hero-image-1.jpg") center/cover no-repeat;
 }
 
 .hero-content {
@@ -253,7 +254,7 @@ h2 {
   font-family: "Poppins", Arial, sans-serif;
   color: #ffffff;
   padding: 9px 14px;
-  background: linear-gradient(50deg, var(--blue) 0%, var(--pink) 70%);
+  background: linear-gradient(50deg, var(--footer-blue) 0%, var(--footer-dark) 70%);
   border-radius: 999px;
 }
 
@@ -286,7 +287,7 @@ h2 {
 .product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 22px;
+  gap: 32px;
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1400px;
@@ -294,10 +295,10 @@ h2 {
 
 .product-box {
   background: white;
-  padding: 20px;
   border-radius: 22px;
   box-shadow: var(--shadow-strong);
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   min-height: 100%;
@@ -315,41 +316,44 @@ h2 {
 }
 
 .product-box h4 {
-  margin: 12px 0 10px;
+  margin: 24px auto 0;
   font-family: "Poppins", Arial, sans-serif;
   font-size: 1.1rem;
 }
 
 .inner-box-product h3 {
-  display: inline-block;
-  margin: 0;
+  position: absolute;
+  text-align: end;
+  margin: 10px;
   font-size: 0.85rem;
   color: #ffffff;
   padding: 9px 14px;
-  background: linear-gradient(50deg, var(--blue) 0%, var(--pink) 70%);
+  background: linear-gradient(50deg, #c21500 0%, #e7b921 70%);
   border-radius: 999px;
+  z-index: 1;
 }
 
 .card-image {
-  margin: 16px 0 10px 0;
-  border-radius: 14px;
+  position: relative;
   object-fit: cover;
 }
 
 .inline-inner-box-product {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin: 10px auto;
+  padding: 28px 28px;
 }
 
 .inline-inner-box-product p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.86rem;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: black;
   background-color: #c6d2e9;
   border-radius: 999px;
@@ -360,9 +364,9 @@ h2 {
 
 .addon-label {
   text-align: center;
-  margin: 14px 0 8px;
   font-family: "Poppins", Arial, sans-serif;
-  font-weight: 600;
+  margin: 0px;
+  font-weight: 700;
   letter-spacing: 1px;
   color: #333;
   font-size: 0.88rem;

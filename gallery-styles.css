@@ -151,10 +151,9 @@ h2 {
 }
 
 .he-card-image {
-  width: calc(100% - 56px);
-  margin: 22px 28px 0;
   object-fit: cover;
-  border-radius: 14px;
+  width: 100%;
+  height: 55%;
 }
 
 .he-card-contents {
