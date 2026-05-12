@@ -28,7 +28,13 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-
+  
+  background-color: #f3f3f3;
+  background-image: url("Images/bg-image.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 img {
