@@ -21,11 +21,12 @@
       </a>
     </div>
 
-    <nav class="nav-links"> 
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#services">Services</a>
-    </nav>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+      </nav>
 
     <nav class="nav-contact">
       <a href="#contact">Contact</a>
@@ -249,3 +250,18 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navContact = document.querySelector('.nav-contact');
+
+    toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navContact.classList.toggle('open');
+    });
+  </script>
+
+</body>
+
+</html>

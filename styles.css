@@ -29,7 +29,6 @@ body {
   color: var(--text);
   overflow-x: hidden;
   
-  background-color: #f3f3f3;
   background-image: url("Images/bg-image.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -166,6 +165,13 @@ h2 {
   background: rgba(255, 255, 255, 0.16);
   transform: translateY(-1px);
   color: var(--yellow);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
 }
 
 .hero {
@@ -710,12 +716,38 @@ textarea {
 
 @media (max-width: 900px) {
   .navbar {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-logo {
     justify-content: center;
   }
 
-  .logo, .nav-links, .nav-contact {
-    justify-self: center;
+  .nav-links, .nav-contact {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2.25rem;
+  }
+
+  .nav-links,
+  .nav-contact {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    grid-column: 1 / -1;
+  }
+
+  .nav-links.open,
+  .nav-contact.open {
+    display: flex;
   }
 
   .footer-grid,
@@ -725,61 +757,6 @@ textarea {
 
   .about-box {
     min-width: 0;
-  }
-}
-
-@media (max-width: 700px) {
-  .section-pad {
-    padding: 54px 16px;
-  }
-
-  .navbar {
-    padding: 12px 14px;
-  }
-
-  .nav-links {
-    gap: 4px;
-    padding: 8px 10px;
-    border-radius: 22px;
-  }
-
-  .navbar a {
-    padding: 9px 12px;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    margin-top: 0;
-    min-height: 82vh;
-    padding-top: 120px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 8vw, 3.4rem);
-  }
-
-  .hero-content {
-    padding: 12px;
-  }
-
-  .about-container,
-  .product-container,
-  .services-container {
-    padding: 0;
-  }
-
-  .footer-card {
-    padding: 22px;
-    border-radius: 24px;
-  }
-
-  .card-image-wrap {
-    aspect-ratio: 16 / 11;
-  }
-
-  .inline-inner-box-product,
-  .inline-inner-box-services {
-    justify-content: flex-start;
   }
 }
 
