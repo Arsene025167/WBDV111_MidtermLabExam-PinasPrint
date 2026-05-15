@@ -32,7 +32,8 @@ body {
   background-image: url("Images/bg-image.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  width: 100vw;
+  height: 100vh;
   background-attachment: fixed;
 }
 
@@ -183,8 +184,12 @@ h2 {
   place-items: center;
   text-align: center;
   color: white;
-  background:
-    url("Images/hero-image-1.jpg") center/cover no-repeat;
+}
+
+.hero img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .hero-content {
@@ -239,15 +244,6 @@ h2 {
 .hero-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-strong);
-}
-
-.background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 .about-container {
