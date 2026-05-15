@@ -473,6 +473,46 @@ h2 {
   color: #222;
 }
 
+.partners-container {
+  display: flex;
+}
+
+.partner-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  background: white;
+  box-shadow: var(--shadow-strong);
+  padding: 20px;
+  width: 72%;
+}
+
+.partner-card {
+  display: flex;
+  align-items: center;;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.partner-card img {
+  object-fit: contain;
+  height: 175px;
+  min-height: auto;
+}
+
+.call-to-action-box {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  padding: 20px;
+  background: rgb(238, 219, 50);
+}
+
 .footer {
   padding: 72px 20px 34px;
   background: linear-gradient(135deg, rgba(0, 87, 184, 0.98), rgba(11, 63, 138, 0.98));
@@ -548,6 +588,8 @@ h2 {
 .footer-links a:hover {
   text-decoration: underline;
 }
+
+
 
 #products,
 #services,
@@ -695,10 +737,23 @@ textarea {
 }
 
 @media (max-width: 600px) {
+    .partners-container {
+        flex-direction: column;
+    }
+
+    .partner-box {
+        width: 100%;
+    }
+
+    .call-to-action-box {
+        width: 100%;
+    }
+  
     .name-inputs {
         flex-direction: column;
         gap: 10px;
     }
+
     .form-container {
         padding: 30px 20px;
     }
