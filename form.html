@@ -1,145 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inquiry Form - PinasPrint</title>
-    
-    <link rel="icon" type="image/jpeg" href="Images/favicon.png" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Changed to your main CSS file -->
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PinasPrint Inquiry Form</title>
+  <link rel="icon" type="image/jpeg" href="Images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <!-- Main Site Header -->
-    <header class="navbar">
-        <div class="logo">
-      <a href="#home" class="logo-link">
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html#home" class="logo-link">
         <img src="Images/nav-logo.png" alt="PinasPrint Logo">
       </a>
     </div>
 
-        <nav class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#products">Products</a>
-            <a href="index.html#services">Services</a>
-        </nav>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#services">Services</a>
+      </nav>
 
-        <nav class="nav-contact">
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <nav class="nav-contact">
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Form Section -->
-    <section class="section-pad" style="display: flex; justify-content: center;">
-        <div class="form-container">
-            <div class="form-title">
-                <h1>Inquiry Form</h1>
-                <p>We will get in touch with you shortly</p>
-            </div>
+  <main>
+    <div class="form-container">
+      <div class="form-title">
+        <h1>Inquire Now</h1>
+        <p>Please fill out the form below and we will get back to you shortly.</p>
+        <p style="margin-top: 8px; font-weight: 600; font-size: 14px; color: #0b3f8a;">
+          Available 9:00 AM - 5:00 PM
+        </p>
+      </div>
 
-            <form id="inquiryForm" novalidate>
-                <!-- Name Field -->
-                <div class="form-group">
-                    <label class="main-label">Your Name</label>
-                    <div class="name-inputs">
-                        <div class="input-wrapper">
-                            <input type="text" id="firstName" name="firstName" required>
-                            <label for="firstName" class="sub-label">First Name</label>
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="text" id="lastName" name="lastName" required>
-                            <label for="lastName" class="sub-label">Last Name</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phone Field -->
-                <div class="form-group">
-                    <label for="phone" class="main-label">Phone Number</label>
-                    <div class="phone-group">
-                        <span class="phone-prefix">+63</span>
-                        <input type="tel" id="phone" name="phone" placeholder="912 345 6789" maxlength="10" required>
-                    </div>
-                </div>
-
-                <!-- Email Field -->
-                <div class="form-group">
-                    <label for="email" class="main-label">Your E-mail Address</label>
-                    <input type="email" id="email" name="email" placeholder="ex: myname@example.com" required>
-                    <span class="helper-text">example@example.com</span>
-                    <span class="error-msg" id="emailError">Please enter a valid email address.</span>
-                </div>
-
-                <!-- Message Field -->
-                <div class="form-group">
-                    <label for="message" class="main-label">Leave Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="submit-wrapper">
-                    <button type="submit" id="submitBtn">Submit</button>
-                </div>
-            </form>
+      <form id="inquiryForm">
+        <div class="name-inputs">
+          <div class="form-group input-wrapper">
+            <label class="main-label" for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Enter first name">
+          </div>
+          <div class="form-group input-wrapper">
+            <label class="main-label" for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Enter last name">
+          </div>
         </div>
-    </section>
 
-    <!-- Main Site Footer -->
-   <footer id="contact" class="footer">
+        <div class="form-group">
+          <label class="main-label" for="phone">Phone Number *</label>
+          <span class="sub-label">Please enter exactly 10 digits after the country code.</span>
+          <div class="phone-group">
+            <span class="phone-prefix">+63</span>
+            <input type="tel" id="phone" name="phone" required placeholder="9123456789">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="main-label" for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="example@email.com">
+          <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="main-label" for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+        </div>
+
+        <div class="form-group">
+          <label class="main-label" for="message">Your Message *</label>
+          <textarea id="message" name="message" required placeholder="Type your inquiry here..."></textarea>
+        </div>
+
+        <div class="submit-wrapper">
+          <button type="submit" id="submitBtn">Send Message</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Success!</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          Your inquiry has been successfully submitted. We will contact you soon!
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact" class="footer">
     <div class="footer-card">
       <div class="footer-grid">
         
-        <!-- Brand Column -->
         <div>
           <div class="mini-brand">Pinas<span>Print</span></div>
           <p class="footer-text">
             A Philippine printing business focused on custom products, reliable service, and polished branding.
           </p>
-          <!-- Inquire Now Button (Styles Unchanged) -->
+          <p class="footer-hours"><strong>Business Hours:</strong> 9:00 AM - 5:00 PM</p>
           <a href="form.html" class="inquire-btn">Inquire Now</a>
         </div>
 
-        <!-- Contact Column -->
         <div>
           <h4>Contact Us</h4>
           <style>
-            .contact-inline 
+            .contact-inline, 
             .contact-inline a {
               color: inherit;
-              text-decoration: none; /* No underline by default */
+              text-decoration: none; 
             }
             .contact-inline a:hover {
-              text-decoration: underline; /* Underline appears on hover */
+              text-decoration: underline; 
             }
           </style>
           <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
-          <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1?rdid=tXYLz9HLNOjS6AUO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DRbZT8nVP%2F#" target="_blank" rel="noopener">Lanyards Pinas</a></p>
+          <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1" target="_blank" rel="noopener">Lanyards Pinas</a></p>
           <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
           <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
         </div>
 
-        <!-- Quick Links Column -->
         <div>
           <h4>Quick Links</h4>
-          <p class="footer-links"><a href="#products">Products</a></p>
-          <p class="footer-links"><a href="#services">Services</a></p>
-          <p class="footer-links"><a href="#contact">Contact</a></p>
+          <p class="footer-links"><a href="index.html#products">Products</a></p>
+          <p class="footer-links"><a href="index.html#services">Services</a></p>
+          <p class="footer-links"><a href="index.html#contact">Contact</a></p>
         </div>
         
       </div>
 
-      <!-- Bottom Copyright Note -->
       <div class="footer-note">
         <span>© 2026 PinasPrint. All rights reserved.</span>
       </div>
     </div>
   </footer>
-    <script src="form.js"></script>
+
+  <script src="form.js"></script>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navContact = document.querySelector('.nav-contact');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navContact.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>

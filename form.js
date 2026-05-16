@@ -5,28 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('email');
     const form = document.getElementById('inquiryForm');
     const emailError = document.getElementById('emailError');
+    const subject = document.getElementById('subject');
+    const message = document.getElementById('message');
 
-    // Filter to allow ONLY letters and spaces for names
-    const letterOnlyFilter = (e) => {
-        // Replace anything that is not a letter or a space with an empty string
+    // Filter to strictly allow ONLY letters and spaces for names
+    const restrictToLetters = (e) => {
         e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
     };
 
-    firstName.addEventListener('input', letterOnlyFilter);
-    lastName.addEventListener('input', letterOnlyFilter);
+    firstName.addEventListener('input', restrictToLetters);
+    lastName.addEventListener('input', restrictToLetters);
 
-    // Filter to allow ONLY numbers for the phone field
+    // Filter to ONLY allow numbers and strictly limit to 10 characters
     phone.addEventListener('input', (e) => {
-        // Replace anything that is not a number with an empty string
-        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        // Remove any non-numeric character
+        let cleanNumbers = e.target.value.replace(/[^0-9]/g, '');
+        
+        // Ensure max 10 digits
+        if (cleanNumbers.length > 10) {
+            cleanNumbers = cleanNumbers.slice(0, 10);
+        }
+        
+        e.target.value = cleanNumbers;
     });
 
     // Handle Form Submission and Validation
     form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevent page reload
+        e.preventDefault(); 
         let isValid = true;
 
-        // 1. Email Validation (Strict Regex)
+        // Validating Email Format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.value)) {
             email.style.borderColor = '#d9534f';
@@ -37,25 +45,29 @@ document.addEventListener('DOMContentLoaded', () => {
             emailError.style.display = 'none';
         }
 
-        // 2. Phone Validation (Must be exactly 10 digits since +63 is prefixed)
-        if (phone.value.length !== 10) {
+        // Validate Contact Number (Exactly 10 digits)
+        if (phone.value.trim().length !== 10) {
             phone.style.borderColor = '#d9534f';
-            alert('Phone number must contain exactly 10 digits following the +63 prefix.');
-            isValid = false;
+            isValid = false; 
         } else {
             phone.style.borderColor = '#ccc';
         }
 
-        // 3. Ensure other fields aren't empty
-        if (!firstName.value.trim() || !lastName.value.trim()) {
-            alert('Please ensure your first and last name are filled out.');
-            isValid = false;
-        }
+        // Validate that Text Fields aren't empty
+        const textFields = [firstName, lastName, subject, message];
+        textFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.style.borderColor = '#d9534f';
+                isValid = false;
+            } else {
+                field.style.borderColor = '#ccc';
+            }
+        });
 
-        // Final Check
+        // Trigger Popup on Full Validation Pass
         if (isValid) {
-            alert('Form successfully submitted!');
-            form.reset(); // Optional: clears the form after success
+            window.location.hash = "popup1";
+            form.reset(); 
         }
     });
 });
