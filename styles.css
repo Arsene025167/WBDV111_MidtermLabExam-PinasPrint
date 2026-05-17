@@ -36,6 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 main {
@@ -349,6 +350,8 @@ h2 {
 .card-image {
   position: relative;
   object-fit: cover;
+  width: 100%;
+  display: block;
 }
 
 .inline-inner-box-product {
@@ -491,7 +494,7 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  width: 100%;
+  min-width: 100px;
   height: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
@@ -504,8 +507,8 @@ h2 {
   opacity: 0.95;
 }
 
-.pos-top-left   { width: 95%;  height: 90%;  transform: translateY(4px); }
-.pos-top-center { width: 80%;  height: 80%;  transform: translateX(-5px); }
+.pos-top-left   { width: 95%;  height: 90%;  transform: translateY(4px);}
+.pos-top-center { width: 80%;  height: 80%;  transform: translateX(-5px);}
 .pos-top-right  { width: 90%;  height: 95%;  transform: translateY(-4px); }
 .pos-mid-left   { width: 85%;  height: 85%;  transform: translateX(6px); }
 .pos-mid-right  { width: 80%;  height: 90%;  transform: translateX(-8px); }
@@ -513,7 +516,7 @@ h2 {
 .pos-bot-center { width: 85%;  height: 80%;  transform: translateY(6px); }
 .pos-bot-right  { width: 95%;  height: 95%;  transform: translateX(4px); }
 
-.pos-top-left:hover   { transform: translateY(4px) translateY(-6px);   box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+.pos-top-left:hover   { transform: translateY(4px) translateY(-6px);  box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
 .pos-top-center:hover { transform: translateX(-5px) translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
 .pos-top-right:hover  { transform: translateY(-4px) translateY(-6px);  box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
 .pos-mid-left:hover   { transform: translateX(6px) translateY(-6px);   box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
@@ -523,14 +526,13 @@ h2 {
 .pos-bot-right:hover  { transform: translateX(4px) translateY(-6px);   box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
 
 .brand-center-content {
-  grid-column: 2;
-  grid-row: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 12px;
+  padding: 3px 12px;
+  z-index: 1;
 }
 
 .brand-center-content h2 {
@@ -544,8 +546,7 @@ h2 {
 
 .brand-center-content p {
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem; 
-  color: #475569;
+  font-size: 0.85rem; 
   line-height: 1.45;
   margin-bottom: 14px;
   max-width: 250px;
@@ -577,7 +578,6 @@ h2 {
   padding: 72px 20px 34px;
   background: linear-gradient(135deg, rgba(0, 87, 184, 0.98), rgba(11, 63, 138, 0.98));
   color: #fff;
-  border: 1px solid black;
   width: 100%;
   margin-top: auto;
 }
@@ -722,12 +722,14 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+  font-family: inherit;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus, textarea:focus {
   border-color: #1a2456;
+  box-shadow: 0 0 0 3px rgba(26, 36, 86, 0.1);
 }
 
 textarea {
@@ -803,19 +805,61 @@ textarea {
 }
 
 .popup {
+  flex-wrap: wrap;
   margin: 70px auto;
-  padding: 30px;
+  padding: 0px 30px 30px;
   background: #fff;
   border-radius: 8px;
   width: 90%; 
-  max-width: 450px; 
+  max-width: 450px;
   position: relative;
   text-align: center;
-  transition: all 5s ease-in-out;
+  opacity: 0;
+  transform: translateY(-100%);
+  will-change: transform, opacity;
+}
+
+.overlay:target .popup {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-icon {
+  display: inline-block;
+  padding: 20px 22px;
+  border-radius: 999px;
+  background: rgb(63, 190, 63) center center no-repeat;
+  align-self: center;
+  transform: translateY(-37px);
+  border: 5px solid white;
+  animation: rotateIcon .6s ease-out;
+}
+
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(390deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .popup h2 {
   margin-top: 0;
+  align-self: center;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
@@ -841,24 +885,82 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
+
   .brand-grid-container {
-      grid-template-rows: repeat(3, 110px);
-      gap: 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 0;
+    height: 50%;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
-  .logo-card {
-      transform: none !important;
-      width: 100% !important;
-      height: 100% !important;
+
+  .brand-grid-container::-webkit-scrollbar {
+    display: none;
   }
-  .logo-card:hover {
-      transform: translateY(-4px) !important;
+
+  .logo-card,
+  .brand-center-content {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    width: 80%;
+    height: auto;
+    min-height: 120px;
+    max-height: 300px;
+    transform: none !important;
   }
-  .brand-center-content h2 { font-size: 1.15rem; }
-  .brand-center-content p { font-size: 0.72rem; max-width: 200px; }
-  .brand-center-content .inquire-btn { padding: 8px 16px; font-size: 0.72rem; }
+
+  .logo-card img {
+    max-width: 80%;
+    max-height: 250px;
+  }
+
+  /* Disable grid positioning */
+  .pos-top-left,
+  .pos-top-center,
+  .pos-top-right,
+  .pos-mid-left,
+  .pos-mid-right,
+  .pos-bot-left,
+  .pos-bot-center,
+  .pos-bot-right {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 📣 Center content as featured slide */
+  .brand-center-content {
+    padding: 20px 16px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    order: 999; /* Move to end of flex container */
+  }
+
+  .brand-center-content h2 {
+    font-size: 1.80rem;
+  }
+
+  .brand-center-content p {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .brand-center-content .inquire-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 600px) {
+  .section-banner {
+      height: 35px;
+  }
   .name-inputs {
       flex-direction: column;
       gap: 10px;
@@ -915,8 +1017,8 @@ textarea {
 }
 
 @media (max-width: 480px) {
-  .logo img {
-    width: 46px;
+  .logo img { 
+    width: 100px;
     height: 46px;
   }
   .logo-text {
@@ -945,5 +1047,17 @@ textarea {
   }
   .inline-inner-box-product p {
     width: auto;
+  }
+  .brand-center-content h2 {
+    font-size: 1rem;
+  }
+
+  .brand-center-content p {
+    font-size: 0.75rem;
+  }
+
+  .logo-card {
+    min-height: 80px;
+    padding: 10px;
   }
 }
