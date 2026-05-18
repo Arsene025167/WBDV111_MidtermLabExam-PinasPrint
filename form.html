@@ -60,6 +60,7 @@
             <span class="phone-prefix">+63</span>
             <input type="tel" id="phone" name="phone" required placeholder="9123456789">
           </div>
+          <span class="error-msg" id="phoneError">Mobile number must start with 9.</span>
         </div>
 
         <div class="form-group">
@@ -110,28 +111,32 @@
         </div>
 
         <div>
-          <h4>Contact Us</h4>
-          <style>
-            .contact-inline, 
-            .contact-inline a {
-              color: inherit;
-              text-decoration: none; 
-            }
-            .contact-inline a:hover {
-              text-decoration: underline; 
-            }
-          </style>
-          <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
-          <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1" target="_blank" rel="noopener">Lanyards Pinas</a></p>
-          <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
-          <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
+          <h4 data-accordion>Contact Us <span class="acc-icon">+</span></h4>
+          <div class="acc-content">
+            <style>
+              .contact-inline,
+              .contact-inline a {
+                color: inherit;
+                text-decoration: none;
+              }
+              .contact-inline a:hover {
+                text-decoration: underline;
+              }
+            </style>
+            <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
+            <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1" target="_blank" rel="noopener">Lanyards Pinas</a></p>
+            <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
+            <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
+          </div>
         </div>
 
         <div>
-          <h4>Quick Links</h4>
-          <p class="footer-links"><a href="index.html#products">Products</a></p>
-          <p class="footer-links"><a href="index.html#services">Services</a></p>
-          <p class="footer-links"><a href="index.html#contact">Contact</a></p>
+          <h4 data-accordion>Quick Links <span class="acc-icon">+</span></h4>
+          <div class="acc-content">
+            <p class="footer-links"><a href="index.html#products">Products</a></p>
+            <p class="footer-links"><a href="index.html#services">Services</a></p>
+            <p class="footer-links"><a href="index.html#contact">Contact</a></p>
+          </div>
         </div>
         
       </div>
@@ -141,6 +146,35 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      function initAccordions() {
+        if (window.innerWidth > 768) return;
+
+        document.querySelectorAll('h4[data-accordion]').forEach(function (h4) {
+          if (h4._accBound) return;
+          h4._accBound = true;
+
+          h4.addEventListener('click', function () {
+            var content = h4.nextElementSibling;
+            var isOpen = content.classList.contains('open');
+
+            document.querySelectorAll('.acc-content').forEach(function (c) { c.classList.remove('open'); });
+            document.querySelectorAll('h4[data-accordion]').forEach(function (b) { b.classList.remove('open'); });
+
+            if (!isOpen) {
+              content.classList.add('open');
+              h4.classList.add('open');
+            }
+          });
+        });
+      }
+
+      initAccordions();
+      window.addEventListener('resize', initAccordions);
+    })();
+  </script>
 
   <script src="form.js"></script>
   <script>

@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PinasPrint</title>
   <link rel="icon" type="image/jpeg" href="Images/favicon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="logo">
       <a href="#home" class="logo-link">
@@ -21,231 +21,290 @@
       </a>
     </div>
 
-    <div class="menu-toggle" id="menuToggle"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-      </nav>
+    <div class="menu-toggle" id="menuToggle">
+      <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M450-120v-330H120v-60h330v-330h60v330h330v60H510v330h-60Z"/></svg>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#brand-showcase">Partners</a>
+    </nav>
 
     <nav class="nav-contact">
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contacts</a>
     </nav>
   </header>
 
+  <!-- ===== MAIN ===== -->
   <main>
-      <section id="home" class="hero">
-        <img src="Images/hero-image-1.jpg" alt="Hero Image">
-        <div class="hero-content">
-          <p class="hero-kicker">Trusted Filipino Printing Solutions</p>
-          <h1>Custom Prints That Make Your Brand Stand Out</h1>
-          <p class="hero-subtitle">
-            From premium lanyards to personalized drinkwares and templates — Pinas Print helps you turn ideas into high-quality prints, fast and hassle-free.
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <img src="Images/hero-image-1.jpg" alt="Hero Image">
+      <div class="hero-content">
+        <p class="hero-kicker">Trusted Filipino Printing Solutions</p>
+        <h1>Custom Prints That Make Your Brand Stand Out</h1>
+        <p class="hero-subtitle">
+          From premium lanyards to personalized drinkwares and templates — Pinas Print helps you turn ideas into high-quality prints, fast and hassle-free.
+        </p>
+        <a href="#products" class="hero-btn">Explore Products</a>
+        <a href="#brand-showcase" class="hero-btn">Inquire Now!</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section section-pad">
+      <div class="section-head">
+        <h2>About Our Company</h2>
+        <p class="section-note">A printing business built on quality, reliability, and practical branding.</p>
+      </div>
+
+      <div class="about-container">
+        <div class="about-box">
+          <h3>ABOUT</h3>
+          <p>
+            Established in 2014, PinasPrint is a Philippine-based printing business offering both online and physical services.
+            We focus on fast turnaround, affordable bulk pricing, and dependable quality for practical branding needs.
           </p>
-          <a href="#products" class="hero-btn">Explore Products</a>
-          <a href="#brand-showcase" class="hero-btn">Inquire Now!</a>
-        </div>
-      </section>
-      
-      <section id="about" class="about-section section-pad">
-        <div class="section-head">
-          <h2>About Our Company</h2>
-          <p class="section-note">
-            A printing business built on quality, reliability, and practical branding.
+          <p>
+            Our core products include customized lanyards, button pins, keychains, shirts, and promotional materials.
+            Every order is handled with the same goal: to help customers present themselves clearly and professionally.
           </p>
         </div>
 
-        <div class="about-container">
-          <div class="about-box">
-            <h3>ABOUT</h3>
-            <p>
-              Established in 2014, PinasPrint is a Philippine-based printing business offering both online and physical services.
-              We focus on fast turnaround, affordable bulk pricing, and dependable quality for practical branding needs.
-            </p>
-            <p>
-              Our core products include customized lanyards, button pins, keychains, shirts, and promotional materials.
-              Every order is handled with the same goal: to help customers present themselves clearly and professionally.
-            </p>
-          </div>  
-
-          <div class="about-box">
-            <h3>WHY US</h3>
-            <p>We offer Filipino businesses and organizations with affordable, high-quality custom prints that elevate their brand identity and make lasting impressions.</p>
-
-            <div class="row">
-              <div class="inner-box-about">
-                <p>✔ Trusted brand</p>
-                <p>✔ Filipino Made</p>
-              </div>
-
-              <div class="inner-box-about">
-                <p>✔ Fast turnaround</p>
-                <p>✔ Quality prints</p>
-              </div>
+        <div class="about-box">
+          <h3>WHY US</h3>
+          <p>We offer Filipino businesses and organizations with affordable, high-quality custom prints that elevate their brand identity and make lasting impressions.</p>
+          <div class="row">
+            <div class="inner-box-about">
+              <p>✔ Trusted brand</p>
+              <p>✔ Filipino Made</p>
+            </div>
+            <div class="inner-box-about">
+              <p>✔ Fast turnaround</p>
+              <p>✔ Quality prints</p>
             </div>
           </div>
         </div>
-      </section>
-
-     <section id="products" class="section-pad">
-       <div class="section-head">
-        <img src="Images/Left.png" alt="Pinas Print Products" class="section-banner">
-       </div>
-
-        <div class="product-container">
-          <article class="product-box">
-            <div class="card-image-wrap">
-              <div class="inner-box-product">
-                <h3>BEST SELLER</h3>
-              </div>  
-              <img src="Images/lanyard1.jpg" alt="LACE10-03G" class="card-image">
-            </div>
-            <h4>LACE10-03G</h4>
-            <div class="inline-inner-box-product">
-              <p>Matte Polyester</p>
-              <p>1-inch</p>
-              <p>One-side print</p>
-            </div>
-            <p class="addon-label">ADD-ONS</p>
-            <div class="inline-inner-box-product">
-              <p>G-Hook</p>
-              <p>Rematche Lock</p>
-            </div>
-          </article>
-
-          <article class="product-box">
-            <div class="inner-box-product">
-              <h3>BEST SELLER</h3>
-            </div>
-            <div class="card-image-wrap">
-              <img src="Images/lanyard2.jpg" alt="LACE10-01G" class="card-image">
-            </div>
-            <h4>LACE10-01G</h4>
-            <div class="inline-inner-box-product">
-              <p>Matte Polyester</p>
-              <p>1-inch</p>
-              <p>One-side print</p>
-            </div>
-            <p class="addon-label">ADD-ONS</p>
-            <div class="inline-inner-box-product">
-              <p>Side Release</p>
-              <p>G-Hook</p>
-              <p>Rematche Lock</p>
-            </div>
-          </article>
-
-          <article class="product-box">
-            <div class="inner-box-product">
-              <h3>BEST SELLER</h3>
-            </div>
-            <div class="card-image-wrap">
-              <img src="Images/lanyard3.jpg" alt="LACE10-10G" class="card-image">
-            </div>
-            <h4>LACE10-10G</h4>
-            <div class="inline-inner-box-product">
-              <p>Matte Polyester</p>
-              <p>1-inch</p>
-              <p>Back-to-back print</p>
-            </div>
-            <p class="addon-label">ADD-ONS</p>
-            <div class="inline-inner-box-product">
-              <p>Side Release</p>
-              <p>G-Hook</p>
-            </div>
-          </article>
-
-          <article class="product-box">
-            <div class="inner-box-product">
-              <h3>BEST SELLER</h3>
-            </div>
-            <div class="card-image-wrap">
-              <img src="Images/lanyard4.jpg" alt="LACE34-03S" class="card-image">
-            </div>
-            <h4>LACE34-03S</h4>
-            <div class="inline-inner-box-product">
-              <p>Matte Polyester</p>
-              <p>3/4-inch</p>
-              <p>One-side print</p>
-            </div>
-            <p class="addon-label">ADD-ONS</p>
-            <div class="inline-inner-box-product">
-              <p>Swivel Hook</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="button-wrap">
-          <a href="gallery.html" class="button-link">View More</a>
-        </div>
-      </section>
-
-    <section id="services" class="section-pad">
-        <div class="section-head">
-          <img src="Images/Right.png" alt="Pinas Print Services" class="section-banner">
-        </div>
-
-        <div class="services-container">
-          <article class="services-box">
-            <div class="inline-inner-box-services">
-              <img src="Images/ID card2.jpg" alt="Lanyards">
-              <h3>Lanyards & PVC ID Cards</h3>
-            </div>
-            <p>Durable lanyards and professional ID cards with custom printing. Perfect for events, offices, and identity verification.</p>
-          </article>
-
-          <article class="services-box">
-            <div class="inline-inner-box-services">
-              <img src="Images/keychain.jpg" alt="Keychains">
-              <h3>Custom Keychains</h3>
-            </div>
-            <p>Personalized keychains with vibrant prints. Great promotional items and gifts for memorable brand visibility.</p>
-          </article>
-
-          <article class="services-box">
-            <div class="inline-inner-box-services">
-              <img src="Images/pinss.jpg" alt="Button Pins">
-              <h3>Button Pins</h3>
-            </div>
-            <p>Custom-designed button pins for campaigns, events, and brand promotion. Eye-catching and affordable.</p>
-          </article>
-
-          <article class="services-box">
-            <div class="inline-inner-box-services">
-              <img src="Images/mugs.jpg" alt="Mugs">
-              <h3>Drinkwares (Mugs & Tumblers)</h3>
-            </div>
-            <p>Premium printed mugs and tumblers perfect for corporate gifts and personal keepsakes. Durable and stylish.</p>
-          </article>
-        </div>
-      </section>
-
-    <section class="brand-showcase-section" id="brand-showcase">
-        <div class="brand-grid-container">
-            <div class="logo-card pos-top-left"><img src="Images/logo-jobiliee.jpg" alt="Jollibee Logo"></div>
-            <div class="logo-card pos-top-center"><img src="Images/logo-LG.png" alt="LG Logo"></div>
-            <div class="logo-card pos-top-right"><img src="Images/logo-kidzoona.png" alt="Kidzoona Logo"></div>
-
-            <div class="logo-card pos-mid-left"><img src="Images/logo-grabcar.png" alt="Grabcar Logo"></div>
-            
-            <div class="brand-center-content">
-                <h2>Start your brand now</h2>
-                <p>Partner with us to create custom prints that elevate your brand identity and make lasting impressions.</p>
-                <a href="form.html" class="inquire-btn">Inquire Now</a>
-            </div>
-
-            <div class="logo-card pos-mid-right"><img src="Images/logo-RTU.png" alt="RTU Logo"></div>
-
-            <div class="logo-card pos-bot-left"><img src="Images/logo-elevate.png" alt="Elevate Logo"></div>
-            <div class="logo-card pos-bot-center"><img src="Images/logo-concentrix.png" alt="Concentrix Logo"></div>
-            <div class="logo-card pos-bot-right"><img src="Images/logo-cetaphil.png" alt="Cetaphil Logo"></div>
-        </div>
+      </div>
     </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section-pad">
+      <div class="section-head">
+        <img src="Images/Left.png" alt="Pinas Print Products" class="section-banner">
+      </div>
+
+      <div class="product-container">
+        <article class="product-box">
+          <img src="Images/lanyard1.jpg" alt="LACE10-03G" class="card-image">
+          <div class="product-box-tag">BEST SELLER</div>
+          <div class="product-contents">
+            <h3 class="product-title">LACE10-03G</h3>
+          </div>
+          <div class="product-content">
+            <div class="product-spec">Matte Polyester</div>
+            <div class="product-spec">1-inch</div>
+            <div class="product-spec">One-side print</div>
+          </div>
+          <div class="product-addon-title">ADD-ONS</div>
+          <div class="product-content">
+            <div class="product-spec">G-Hook</div>
+            <div class="product-spec">Rematche Lock</div>
+          </div>
+          <div class="product-content">
+            <div class="product-price">₱50.00</div>
+          </div>
+          <div class="product-content">
+            <div class="product-sold">500 SOLD</div>
+          </div>
+        </article>
+
+        <article class="product-box">
+          <img src="Images/lanyard2.jpg" alt="LACE10-01G" class="card-image">
+          <div class="product-box-tag">BEST SELLER</div>
+          <div class="product-contents">
+            <h3 class="product-title">LACE10-01G</h3>
+          </div>
+          <div class="product-content">
+            <div class="product-spec">Matte Polyester</div>
+            <div class="product-spec">1-inch</div>
+            <div class="product-spec">One-side print</div>
+          </div>
+          <div class="product-addon-title">ADD-ONS</div>
+          <div class="product-content">
+            <div class="product-spec">Side Release</div>
+            <div class="product-spec">G-Hook</div>
+            <div class="product-spec">Rematche Lock</div>
+          </div>
+          <div class="product-content">
+            <div class="product-price">₱50.00</div>
+          </div>
+          <div class="product-content">
+            <div class="product-sold">500 SOLD</div>
+          </div>
+        </article>
+
+        <article class="product-box">
+          <img src="Images/lanyard3.jpg" alt="LACE10-10G" class="card-image">
+          <div class="product-box-tag">BEST SELLER</div>
+          <div class="product-contents">
+            <h3 class="product-title">LACE10-10G</h3>
+          </div>
+          <div class="product-content">
+            <div class="product-spec">Matte Polyester</div>
+            <div class="product-spec">1-inch</div>
+            <div class="product-spec">Back-to-back print</div>
+          </div>
+          <div class="product-addon-title">ADD-ONS</div>
+          <div class="product-content">
+            <div class="product-spec">Side Release</div>
+            <div class="product-spec">G-Hook</div>
+          </div>
+          <div class="product-content">
+            <div class="product-price">₱50.00</div>
+          </div>
+          <div class="product-content">
+            <div class="product-sold">500 SOLD</div>
+          </div>
+        </article>
+
+        <article class="product-box">
+          <img src="Images/lanyard4.jpg" alt="LACE34-03S" class="card-image">
+          <div class="product-box-tag">BEST SELLER</div>
+          <div class="product-contents">
+            <h3 class="product-title">LACE34-03S</h3>
+          </div>
+          <div class="product-content">
+            <div class="product-spec">Matte Polyester</div>
+            <div class="product-spec">3/4-inch</div>
+            <div class="product-spec">One-side print</div>
+          </div>
+          <div class="product-addon-title">ADD-ONS</div>
+          <div class="product-content">
+            <div class="product-spec">Swivel Hook</div>
+          </div>
+          <div class="product-content">
+            <div class="product-price">₱50.00</div>
+          </div>
+          <div class="product-content">
+            <div class="product-sold">500 SOLD</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="button-wrap">
+        <a href="gallery.html" class="button-link">View More</a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-pad">
+      <div class="section-head">
+        <img src="Images/Right.png" alt="Pinas Print Services" class="section-banner">
+      </div>
+
+      <div class="services-container">
+        <article class="services-box"
+                 style="background-image: url('Images/ID card2.jpg'); background-size: cover; background-position: center;">
+          <div class="inline-inner-box-services">
+            <h3>Lanyards & PVC ID Cards</h3>
+          </div>
+          <p>Durable lanyards and professional ID cards with custom printing. Perfect for events, offices, and identity verification.</p>
+        </article>
+
+        <article class="services-box">
+          <div class="inline-inner-box-services">
+            <img src="Images/keychain.jpg" alt="Keychains">
+            <h3>Custom Keychains</h3>
+          </div>
+          <p>Personalized keychains with vibrant prints. Great promotional items and gifts for memorable brand visibility.</p>
+        </article>
+
+        <article class="services-box">
+          <div class="inline-inner-box-services">
+            <img src="Images/pinss.jpg" alt="Button Pins">
+            <h3>Button Pins</h3>
+          </div>
+          <p>Custom-designed button pins for campaigns, events, and brand promotion. Eye-catching and affordable.</p>
+        </article>
+
+        <article class="services-box">
+          <div class="inline-inner-box-services">
+            <img src="Images/mugs.jpg" alt="Mugs">
+            <h3>Drinkwares (Mugs & Tumblers)</h3>
+          </div>
+          <p>Premium printed mugs and tumblers perfect for corporate gifts and personal keepsakes. Durable and stylish.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BRAND SHOWCASE -->
+    <div class="section-pad">
+      <div class="section-head">
+        <h2>Trusted by Known Brands</h2>
+        <p class="section-note">Proudly serving a diverse range of clients across industries.</p>
+      </div>
+      <section id="brand-showcase" class="brand-showcase-section">
+        <div class="brand-grid-container">
+          <div class="logo-card pos-top-left"><img src="Images/logo-jobiliee.jpg" alt="Jollibee Logo"></div>
+          <div class="logo-card pos-top-center"><img src="Images/logo-LG.png" alt="LG Logo"></div>
+          <div class="logo-card pos-top-right"><img src="Images/logo-kidzoona.png" alt="Kidzoona Logo"></div>
+
+          <div class="logo-card pos-mid-left"><img src="Images/logo-grabcar.png" alt="Grabcar Logo"></div>
+
+          <div class="brand-center-content">
+          
+            <h2>Start your brand now</h2>
+            <p>Partner with us to create custom prints that elevate your brand identity and make lasting impressions.</p>
+            <a href="form.html" class="inquire-btn">Inquire Now</a>
+          </div>
+
+          <div class="logo-card pos-mid-right"><img src="Images/logo-ccf.png" alt="RTU Logo"></div>
+
+          <div class="logo-card pos-bot-left"><img src="Images/logo-elevate.png" alt="Elevate Logo"></div>
+          <div class="logo-card pos-bot-center"><img src="Images/logo-concentrix.png" alt="Concentrix Logo"></div>
+          <div class="logo-card pos-bot-right"><img src="Images/logo-cetaphil.png" alt="Cetaphil Logo"></div>
+        </div>
+      </section>
+    </div>
+
+    <article class="testimonial-section section-pad">
+      <div class="section-head">
+        <h2>What Our Clients Say</h2>
+        <p class="section-note">Real feedback from our satisfied customers.</p>
+      </div>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <p>"Recieved, the quality is spot on! Awsome output, will order again soon"</p>
+            <span>- Satisfied Customer</span>
+          </div>
+        <div class="testimonial-card">
+          <p>
+          "Dear Vendor/Supplier,<br>
+          <br>
+          Good day! 
+          We would like to express to you our warmest admiration for your unfailing service to us as one of our regular suppliers.
+          We greatly appreciate your efficiency in providing the best products and services. You have always delivered our orders
+          within the time frame and you have given us supplies that are of the best quality. In line with this, we congratulate
+          you on getting the grade of 4 for your 2022 Supplier Evaluation We hope that in the future you will also maintain these
+          grades by using your good project management and quality system<br>
+          <br>
+          Sincerely yours,"
+          </p>
+          <span>- Procurement Department</span>
+        </div>
+      </div>
+    </article>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer id="contact" class="footer">
     <div class="footer-card">
       <div class="footer-grid">
-        
+
         <div>
           <div class="mini-brand">Pinas<span>Print</span></div>
           <p class="footer-text">
@@ -256,30 +315,24 @@
         </div>
 
         <div>
-          <h4>Contact Us</h4>
-          <style>
-            .contact-inline, 
-            .contact-inline a {
-              color: inherit;
-              text-decoration: none; 
-            }
-            .contact-inline a:hover {
-              text-decoration: underline; 
-            }
-          </style>
-          <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
-          <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1" target="_blank" rel="noopener">Lanyards Pinas</a></p>
-          <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
-          <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
+          <h4 data-accordion>Contact Us <span class="acc-icon">+</span></h4>
+          <div class="acc-content">
+            <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
+            <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1" target="_blank" rel="noopener">Lanyards Pinas</a></p>
+            <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
+            <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
+          </div>
         </div>
 
         <div>
-          <h4>Quick Links</h4>
-          <p class="footer-links"><a href="#products">Products</a></p>
-          <p class="footer-links"><a href="#services">Services</a></p>
-          <p class="footer-links"><a href="#contact">Contact</a></p>
+          <h4 data-accordion>Quick Links <span class="acc-icon">+</span></h4>
+          <div class="acc-content">
+            <p class="footer-links"><a href="#products">Products</a></p>
+            <p class="footer-links"><a href="#services">Services</a></p>
+            <p class="footer-links"><a href="#contact">Contact</a></p>
+          </div>
         </div>
-        
+
       </div>
 
       <div class="footer-note">
@@ -288,7 +341,37 @@
     </div>
   </footer>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
+    // Accordion (mobile only)
+    (function () {
+      function initAccordions() {
+        if (window.innerWidth > 768) return;
+
+        document.querySelectorAll('h4[data-accordion]').forEach(function (h4) {
+          if (h4._accBound) return;
+          h4._accBound = true;
+
+          h4.addEventListener('click', function () {
+            var content = h4.nextElementSibling;
+            var isOpen = content.classList.contains('open');
+
+            document.querySelectorAll('.acc-content').forEach(function (c) { c.classList.remove('open'); });
+            document.querySelectorAll('h4[data-accordion]').forEach(function (b) { b.classList.remove('open'); });
+
+            if (!isOpen) {
+              content.classList.add('open');
+              h4.classList.add('open');
+            }
+          });
+        });
+      }
+
+      initAccordions();
+      window.addEventListener('resize', initAccordions);
+    })();
+
+    // Hamburger menu
     const toggle = document.getElementById('menuToggle');
     const navLinks = document.querySelector('.nav-links');
     const navContact = document.querySelector('.nav-contact');
@@ -296,6 +379,7 @@
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       navContact.classList.toggle('open');
+      toggle.classList.toggle('open');
     });
   </script>
 

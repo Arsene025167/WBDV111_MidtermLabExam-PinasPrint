@@ -14,6 +14,30 @@
 </head>
 <body>
 
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="#home" class="logo-link">
+        <img src="Images/nav-logo.png" alt="PinasPrint Logo">
+      </a>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M450-120v-330H120v-60h330v-330h60v330h330v60H510v330h-60Z"/></svg>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#brand-showcase">Partners</a>
+    </nav>
+
+    <nav class="nav-contact">
+      <a href="#contact">Contacts</a>
+    </nav>
+  </header>
+
   <header class="gallery-hero">
     <div class="gallery-overlay"></div>
     <div class="gallery-hero-content">
@@ -24,10 +48,10 @@
       <a href="index.html#products" class="gallery-btn">Back to Products</a>
     </div>
   </header>
-
+  
   <section class="gallery-section">
     <div class="section-head">
-      <img src="Images/gallery-banner.png" alt="Gallery Banner">
+      <img src="Images/gallery-banner-landyard.png" alt="Gallery Banner">
     </div>
 
     <div class="cards-grid-container">
@@ -236,7 +260,7 @@
     </div>
 
     <div class="section-head">
-      <img src="Images/gallery-banner.png" alt="Gallery Banner">
+      <img src="Images/gallery-banner-mugs.png" alt="Gallery Banner">
     </div>
     
     <div class="cards-grid-container">
@@ -306,7 +330,7 @@
     </div>
 
     <div class="section-head">
-      <img src="Images/gallery-banner.png" alt="Gallery Banner">
+      <img src="Images/banner-pins.png" alt="Gallery Banner">
     </div>
     
     <div class="cards-grid-container">
@@ -376,7 +400,7 @@
     </div>
 
     <div class="section-head">
-      <img src="Images/gallery-banner.png" alt="Gallery Banner">
+      <img src="Images/gallery-banner-keychain.png" alt="Gallery Banner">
     </div>
     
     <div class="cards-grid-container">
@@ -446,7 +470,7 @@
     </div>
 
     <div class="section-head">
-      <img src="Images/gallery-banner.png" alt="Gallery Banner">
+      <img src="Images/gallery-banner-idcards.png" alt="Gallery Banner">
     </div>
     
     <div class="cards-grid-container">
@@ -469,50 +493,50 @@
     </div>
   </section>
 
- <footer id="contact" class="footer">
+  <footer id="contact" class="footer">
   <div class="footer-card">
     <div class="footer-grid">
       
-      <!-- Brand Column -->
       <div>
         <div class="mini-brand">Pinas<span>Print</span></div>
         <p class="footer-text">
           A Philippine printing business focused on custom products, reliable service, and polished branding.
         </p>
-        <!-- Inquire Now Button (Styles Unchanged) -->
+        <p class="footer-hours"><strong>Business Hours:</strong> 9:00 AM - 5:00 PM</p>
         <a href="form.html" class="inquire-btn">Inquire Now</a>
       </div>
 
-      <!-- Contact Column -->
       <div>
-        <h4>Contact Us</h4>
-        <style>
-          .contact-inline 
-          .contact-inline a {
-            color: inherit;
-            text-decoration: none; /* No underline by default */
-          }
-          .contact-inline a:hover {
-            text-decoration: underline; /* Underline appears on hover */
-          }
-        </style>
-        <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
-        <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1?rdid=tXYLz9HLNOjS6AUO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DRbZT8nVP%2F#" target="_blank" rel="noopener">Lanyards Pinas</a></p>
-        <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
-        <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
+        <h4 data-accordion>Contact Us <span class="acc-icon">+</span></h4>
+        <div class="acc-content">
+          <style>
+            .contact-inline,
+            .contact-inline a {
+              color: inherit;
+              text-decoration: none;
+            }
+            .contact-inline a:hover {
+              text-decoration: underline;
+            }
+          </style>
+          <p><strong>Location:</strong> Antipolo City, Rizal, Philippines</p>
+          <p class="contact-inline"><strong>Facebook:</strong> <a href="https://www.facebook.com/aloha.quiming.1" target="_blank" rel="noopener">Lanyards Pinas</a></p>
+          <p class="contact-inline"><strong>Phone:</strong> <a href="tel:+639274290650">+63 927 429 0650</a></p>
+          <p class="contact-inline"><strong>Email:</strong> <a href="mailto:pinasprintdigital@gmail.com">pinasprintdigital@gmail.com</a></p>
+        </div>
       </div>
 
-      <!-- Quick Links Column -->
       <div>
-        <h4>Quick Links</h4>
-        <p class="footer-links"><a href="#products">Products</a></p>
-        <p class="footer-links"><a href="#services">Services</a></p>
-        <p class="footer-links"><a href="#contact">Contact</a></p>
+        <h4 data-accordion>Quick Links <span class="acc-icon">+</span></h4>
+        <div class="acc-content">
+         <p class="footer-links"><a href="index.html#products">Products</a></p>
+          <p class="footer-links"><a href="index.html#services">Services</a></p>
+          <p class="footer-links"><a href="index.html#contact">Contact</a></p>
+        </div>
       </div>
       
     </div>
 
-    <!-- Bottom Copyright Note -->
     <div class="footer-note">
       <span>© 2026 PinasPrint. All rights reserved.</span>
     </div>
@@ -520,3 +544,43 @@
 </footer>
 </body>
 </html>
+
+<script>
+  (function () {
+    function initAccordions() {
+      if (window.innerWidth > 768) return;
+
+      document.querySelectorAll('h4[data-accordion]').forEach(function (h4) {
+        if (h4._accBound) return;
+        h4._accBound = true;
+
+        h4.addEventListener('click', function () {
+          var content = h4.nextElementSibling;
+          var isOpen = content.classList.contains('open');
+
+          document.querySelectorAll('.acc-content').forEach(function (c) { c.classList.remove('open'); });
+          document.querySelectorAll('h4[data-accordion]').forEach(function (b) { b.classList.remove('open'); });
+
+          if (!isOpen) {
+            content.classList.add('open');
+            h4.classList.add('open');
+          }
+        });
+      });
+    }
+
+    initAccordions();
+    window.addEventListener('resize', initAccordions);
+  })();
+
+    // Hamburger menu
+    const toggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navContact = document.querySelector('.nav-contact');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navContact.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+</script>

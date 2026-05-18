@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('email');
     const form = document.getElementById('inquiryForm');
     const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
     const subject = document.getElementById('subject');
     const message = document.getElementById('message');
 
-    // Filter to strictly allow ONLY letters and spaces for names
     const restrictToLetters = (e) => {
         e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
     };
@@ -16,25 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
     firstName.addEventListener('input', restrictToLetters);
     lastName.addEventListener('input', restrictToLetters);
 
-    // Filter to ONLY allow numbers and strictly limit to 10 characters
     phone.addEventListener('input', (e) => {
-        // Remove any non-numeric character
         let cleanNumbers = e.target.value.replace(/[^0-9]/g, '');
-        
-        // Ensure max 10 digits
+
+        if (cleanNumbers.length > 0 && cleanNumbers[0] !== '9') {
+            cleanNumbers = '';
+        }
+
         if (cleanNumbers.length > 10) {
             cleanNumbers = cleanNumbers.slice(0, 10);
         }
-        
+
         e.target.value = cleanNumbers;
     });
 
-    // Handle Form Submission and Validation
     form.addEventListener('submit', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         let isValid = true;
 
-        // Validating Email Format
+        // Validate Email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.value)) {
             email.style.borderColor = '#d9534f';
@@ -45,15 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
             emailError.style.display = 'none';
         }
 
-        // Validate Contact Number (Exactly 10 digits)
-        if (phone.value.trim().length !== 10) {
+        // Validate Phone
+        if (phone.value.trim().length !== 10 || phone.value[0] !== '9') {
             phone.style.borderColor = '#d9534f';
-            isValid = false; 
+            phoneError.style.display = 'block';
+            isValid = false;
         } else {
             phone.style.borderColor = '#ccc';
+            phoneError.style.display = 'none';
         }
 
-        // Validate that Text Fields aren't empty
+        // Validate Text Fields
         const textFields = [firstName, lastName, subject, message];
         textFields.forEach(field => {
             if (!field.value.trim()) {
@@ -64,10 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Trigger Popup on Full Validation Pass
         if (isValid) {
             window.location.hash = "popup1";
-            form.reset(); 
+            form.reset();
         }
     });
 });
